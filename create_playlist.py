@@ -59,6 +59,19 @@ def create_playlist(name, public, colab, desc, user):
     return playlist
     
 
+genres_to_filter = ['rock', 
+                    'funk rock', 
+                    'metal', 
+                    'funk metal', 
+                    'post-grunge', 
+                    'alternative rock', 
+                    'nu metal', 
+                    'classic rock', 
+                    'glam metal', 
+                    'hard rock', 
+                    'album rock', 
+                    'pop rock']
+
 # Start Program
 def main():
     
@@ -99,19 +112,6 @@ def main():
             song_id = song.get('id', '')
             song_name = song.get('name', '')
             genres = get_song_genre(song_id)
-            
-            genres_to_filter = ['rock', 
-                                'funk rock', 
-                                'metal', 
-                                'funk metal', 
-                                'post-grunge', 
-                                'alternative rock', 
-                                'nu metal', 
-                                'classic rock', 
-                                'glam metal', 
-                                'hard rock', 
-                                'album rock', 
-                                'pop rock']
             
             if any(genre in genres_to_filter for genre in genres):
                 #print(f"Name: {song_name}") #DEBUG
