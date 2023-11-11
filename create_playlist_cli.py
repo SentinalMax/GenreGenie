@@ -12,9 +12,9 @@ parser = argparse.ArgumentParser(description='Create a Spotify playlist based on
 # Adding arguments
 parser.add_argument('genres', type=str, help='List of genres to filter, separated by commas.')
 parser.add_argument('--name', type=str, required=True, help='Name of the playlist.')
-parser.add_argument('--public', type=bool, required=True, default=False, help='Whether the playlist should be public or not.')
+parser.add_argument('--public', type=bool, required=False, default=True, help='Whether the playlist should be private or not.')
 parser.add_argument('--desc', type=str, required=True, help='Description of the playlist.')
-parser.add_argument('--collab', type=bool, required=True, default=False, help='Whether the playlist should be collaborative.')
+parser.add_argument('--collab', type=bool, required=False, default=False, help='Whether the playlist should be collaborative.')
 parser.add_argument('--pages', type=int, required=False, default=20, help='Pages to iterate through, each page yields 20 tracks; defaults to 20 (iterates through 400 songs), you may need to adjust this value depending on how many liked songs you have.')
 
 # Parse arguments
