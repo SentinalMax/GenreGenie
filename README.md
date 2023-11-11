@@ -19,6 +19,9 @@ git clone https://github.com/SentinalMax/GenreGenie.git
 chmod +x GenreGenie.py
 ```
 ```
+pip3 install -r requirements.txt
+```
+```
 python3 GenreGenie.py --help
 ```
 

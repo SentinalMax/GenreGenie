@@ -15,6 +15,7 @@ parser.add_argument('--name', type=str, required=True, help='Name of the playlis
 parser.add_argument('--public', type=bool, required=True, default=False, help='Whether the playlist should be public or not.')
 parser.add_argument('--desc', type=str, required=True, help='Description of the playlist.')
 parser.add_argument('--collab', type=bool, required=True, default=False, help='Whether the playlist should be collaborative.')
+parser.add_argument('--pages', type=int, required=False, default=20, help='Pages to iterate through, each page yields 20 tracks; defaults to 20 (iterates through 400 songs), you may need to adjust this value depending on how many liked songs you have.')
 
 # Parse arguments
 args = parser.parse_args()
@@ -27,6 +28,7 @@ playlist_name = args.name
 playlist_public = args.public
 playlist_desc = args.desc
 playlist_collab = args.collab
+playlist_pages = args.pages
 
 # Get client data
 json_file_path = 'client_keys.json'
@@ -83,7 +85,7 @@ def create_playlist(name, public, colab, desc, user):
 def main():
     
     # Variables
-    pages = 30 # each page yields 20 results (max=20)
+    pages = playlist_pages # each page yields 20 results (max=20)
     offset = 0
     track_cnt = 0
     
