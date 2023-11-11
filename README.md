@@ -1,2 +1,2 @@
-# Playlistify
+# GenreGenie
  
